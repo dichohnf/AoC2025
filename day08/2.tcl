@@ -38,10 +38,7 @@ set distances [lsort -integer -index 2 $distances]
 set iteration 0
 set circuits {}
 
-puts [format "Points: %d" [llength $points]]
-
 while {[llength [lindex $circuits 0]] != [llength $points]} {
-  puts [format "First circuit length: %d" [llength [lindex $circuits 0]]]
   set distance [lindex $distances $iteration]
   set first [lindex $distance 0]
   set second [lindex $distance 1]
@@ -83,16 +80,3 @@ set fx [lindex $first 0]
 set sx [lindex $second 0]
 
 puts [format "Mult. of X coordinates: %d" [expr $fx * $sx]]
-
-
-#proc compare_by_length {a b} {
-#    return [expr {[llength $b] - [llength $a]}]
-#}
-#
-#set circuits [lsort -command compare_by_length $circuits]
-#
-#set first_length [llength [lindex $circuits 0]]
-#set second_length [llength [lindex $circuits 1]]
-#set third_length [llength [lindex $circuits 2]]
-#
-#puts [format "%d * %d * %d = %d" $first_length $second_length $third_length [expr {$first_length * $second_length * $third_length}]]
